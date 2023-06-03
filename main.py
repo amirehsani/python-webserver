@@ -37,12 +37,12 @@ class MyHTTP(BaseHTTPRequestHandler):
 
 def run(server_class=HTTPServer, handler_class=MyHTTP, host="localhost", port=8020):
     server_address = (host, port)
-    httpd = server_class(server_address, handler_class)
+    my_server = server_class(server_address, handler_class)
     print(f"Server is running on {host}:{port}")
     try:
-        httpd.serve_forever()
+        my_server.serve_forever()
     except KeyboardInterrupt:
-        httpd.server_close()
+        my_server.server_close()
         print("Server stopped")
 
 
